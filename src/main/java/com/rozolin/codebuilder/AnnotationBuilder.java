@@ -1,7 +1,5 @@
 package com.rozolin.codebuilder;
 
-import sun.plugin.navig.motif.OJIPlugin;
-
 import java.lang.annotation.Annotation;
 import java.util.*;
 
@@ -22,17 +20,8 @@ public class AnnotationBuilder {
         this.annotationName = annotationName;
     }
 
-    public AnnotationBuilder addMember(String name, byte value){
-
-        return addMemberAll(name,""+value);
-    }
-    public AnnotationBuilder addMember(String name, byte[] value){
-        StringBuilder sb = new StringBuilder();
-        for (byte pri : value) {
-            sb.append(" "+pri+",");
-        }
-        return addMemberAll(name, "{"+sb.substring(0,sb.length()-1)+" }");
-    }
+    public AnnotationBuilder addMember(String name, byte value){return addMemberAll(name,value);}
+    public AnnotationBuilder addMember(String name, byte[] value){return addMemberAll(name, value);}
 
     public AnnotationBuilder addMember(String name, short value){
         return addMemberAll(name,value);
